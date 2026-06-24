@@ -5,6 +5,8 @@ import os
 
 app = FastAPI()
 
+Instrumentator().instrument(app).expose(app)
+
 @app.get("/health")
 def health():
     return {
