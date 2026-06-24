@@ -18,7 +18,7 @@ jobs:
 
       - name: Build Docker image
         run: sh |
-              pwd
+              cd /home/golu/Desktop/webvory/fastapi-prod
               docker build -t fastapi-app .
 
       - name: Deploy with Docker Compose
