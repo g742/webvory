@@ -17,9 +17,7 @@ jobs:
         run: echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Build Docker image
-        run: |
-          cd /home/golu/Desktop/webvory/fastapi-prod
-          docker build -t fastapi-app .
+        run: docker build -t fastapi-app /home/golu/Desktop/webvory/fastapi-prod/docker
 
       - name: Deploy with Docker Compose
         run: |
