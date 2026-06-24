@@ -13,12 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create .env file
-        run: echo "${{ secrets.ENV_FILE }}" > .env
-
       - name: Build and Deploy with Docker Compose
         run: |
           cd /home/golu/Desktop/webvory/fastapi-prod
+
           git pull origin main
+
+          # Create .env in the correct directory
+          echo "${{ secrets.ENV_FILE }}" > .env
+
           docker compose down
+          sleep 15
           docker compose up -d --build
