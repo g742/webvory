@@ -17,7 +17,9 @@ jobs:
         run: echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Build Docker image
-        run: docker build -t fastapi-app .
+        run: sh |
+              pwd
+              docker build -t fastapi-app .
 
       - name: Deploy with Docker Compose
         run: |
