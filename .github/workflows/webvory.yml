@@ -3,7 +3,7 @@ name: Deploy FastAPI App
 on:
   push:
     branches:
-      - main       
+      - main
 
 jobs:
   build-deploy:
@@ -17,9 +17,9 @@ jobs:
         run: echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Build Docker image
-        run: sh |
-              cd /home/golu/Desktop/webvory/fastapi-prod
-              docker build -t fastapi-app .
+        run: |
+          cd /home/golu/Desktop/webvory/fastapi-prod
+          docker build -t fastapi-app .
 
       - name: Deploy with Docker Compose
         run: |
