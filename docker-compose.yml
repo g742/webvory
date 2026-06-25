@@ -81,7 +81,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - prometheus
-    expose:
+    ports:
       - "3000:3000"
     networks:
       - app_network
