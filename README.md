@@ -29,6 +29,8 @@ for security to prevent from DDOS attack I setup fail2ban on server and allow on
 
 for backup use cronjob for DB backup.
 
+Backend API kept in github secrets.
+
 Health check use http://localhost/metrics
 
 For Monitoring use prometheus to collect metrics and visualization use grafana and check number of hit or click on app and other infrastructure. 
