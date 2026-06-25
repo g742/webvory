@@ -84,7 +84,7 @@ services:
       - GF_SERVER_SERVE_FROM_SUB_PATH=true
 
     ports:
-      - "3000:3000"
+      - "3000"
 
     depends_on:
       - prometheus
