@@ -56,13 +56,21 @@ services:
     image: prom/prometheus
     container_name: prometheus
     restart: always
+
+    command:
+      - '--web.route-prefix=/'
+      - '--web.external-url=/prometheus/'
+
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
+
     ports:
       - "9090:9090"
+
     depends_on:
       - api
+
     networks:
       - app_network
 
