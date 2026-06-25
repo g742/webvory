@@ -82,7 +82,7 @@ services:
     depends_on:
       - prometheus
     expose:
-      - "3000"
+      - "3000:3000"
     networks:
       - app_network
 
